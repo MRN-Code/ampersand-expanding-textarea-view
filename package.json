@@ -6,7 +6,9 @@
   "repository": "https://github.com/datuhealth/ampersand-expanding-textarea-view",
   "scripts": {
     "start": "run-browser test/index.js",
-    "test": "browserify test/index.js | tape-run -b phantom | tap-spec"
+    "test": "browserify test/index.js | tape-run -b phantom | tap-spec",
+    "lint": "jshint .",
+    "validate": "npm ls"
   },
   "bugs": {
     "url": "https://github.com/datuhealth/ampersand-expanding-textarea-view/issues"
@@ -21,7 +23,7 @@
   "author": "Mike Engel",
   "license": "Apache-2.0",
   "dependencies": {
-    "ampersand-input-view": "^5.0.0"
+    "ampersand-input-view": "^6.0.0"
   },
   "devDependencies": {
     "ampersand-view-conventions": "^1.1.6",
@@ -35,5 +37,10 @@
     "tape": "^4.2.1",
     "tape-run": "^2.1.0",
     "tape-suite": "^0.2.1"
-  }
+  },
+  "pre-commit": [
+    "lint",
+    "validate",
+    "test"
+  ]
 }
